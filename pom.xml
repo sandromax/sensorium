@@ -13,7 +13,7 @@
     <modules>
         <module>sensor-ingest</module>
         <module>sensor-emulator</module>
-
+        <module>sensor-data</module>
     </modules>
 
     <properties>

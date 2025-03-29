@@ -30,3 +30,13 @@ services:
 #      JVM_OPTS: "-Xms32M -Xmx64M"
 #    depends_on:
 #      - kafka
+
+  postgres:
+    image: postgres:15
+    container_name: sensorium-postgres
+    environment:
+      POSTGRES_DB: sensorium
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5432:5432"
