@@ -1,0 +1,18 @@
+<table>
+  <thead>
+  <tr>
+    <th>Sensor ID</th>
+    <th>Type</th>
+    <th>Value</th>
+    <th>Timestamp</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let sensor of sensors">
+    <td>{{ sensor.sensorId }}</td>
+    <td>{{ sensor.type }}</td>
+    <td>{{ sensor.value }}</td>
+    <td>{{ sensor.timestamp | date:'short' }}</td>
+  </tr>
+  </tbody>
+</table>
