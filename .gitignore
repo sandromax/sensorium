@@ -1,0 +1,76 @@
+# ========== MAIN ==========
+
+# IDE
+.idea/
+*.iml
+*.iws
+
+# Build directories
+target/
+out/
+build/
+
+# Maven wrapper
+.mvn/wrapper/maven-wrapper.jar
+.mvn/wrapper/maven-wrapper.properties
+.mvn/wrapper/maven-wrapper.zip
+mvnw
+mvnw.cmd
+
+.gradle/
+build/
+
+# ========== OS/SERVICE ==========
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Linux
+*~
+
+# Logs
+*.log
+logs/
+
+# ========== INTELLIJ IDEA SPECIFIC ==========
+
+.idea/modules.xml
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/dictionaries
+.idea/vcs.xml
+.idea/misc.xml
+
+.idea/runConfigurations/
+
+# ========== VSCode SPECIFIC ==========
+.vscode/
+
+# ========== JAR, WAR, TEMP ==========
+
+*.jar
+*.war
+*.ear
+*.class
+
+# ========== TESTS, COVERAGE, TMP ==========
+
+test-output/
+coverage/
+*.exec
+*.ec
+*.tmp
+*.bak
+
+# ========== SECRETS CONFIG ==========
+
+.env
+*.env
+.env.*
+secrets.*
+credentials.*
