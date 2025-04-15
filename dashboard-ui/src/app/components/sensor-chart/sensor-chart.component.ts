@@ -16,7 +16,6 @@ export class SensorChartComponent implements OnInit {
 
   view: [number, number] = [700, 300];
 
-  // Chart options
   showXAxis = true;
   showYAxis = true;
   showLegend = false;
