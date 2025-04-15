@@ -1,1 +1,12 @@
-<p>sensor-chart works!</p>
+<ngx-charts-line-chart
+  [view]="view"
+  [scheme]="'vivid'"
+  [results]="chartData"
+  [gradient]="false"
+  [xAxis]="showXAxis"
+  [yAxis]="showYAxis"
+  [legend]="showLegend"
+  [xAxisLabel]="xAxisLabel"
+  [yAxisLabel]="yAxisLabel"
+  [autoScale]="true">
+</ngx-charts-line-chart>
