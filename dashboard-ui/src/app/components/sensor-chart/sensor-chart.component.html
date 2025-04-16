@@ -1,3 +1,12 @@
+<div style="margin-bottom: 1rem;">
+  <label for="sensorSelect">Select sensor: </label>
+  <select id="sensorSelect" (change)="onSensorChange($event)">
+    <option *ngFor="let sensor of availableSensors" [value]="sensor" [selected]="sensor === sensorId">
+      {{ sensor }}
+    </option>
+  </select>
+</div>
+
 <ngx-charts-line-chart
   [view]="view"
   [scheme]="'vivid'"

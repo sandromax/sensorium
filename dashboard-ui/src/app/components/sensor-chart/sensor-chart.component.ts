@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { SensorService, SensorData } from 'src/app/services/sensor.service';
@@ -13,9 +13,9 @@ import { interval, Subscription } from 'rxjs';
 })
 export class SensorChartComponent implements OnInit {
   sensorId = 'sensor-1';
+  availableSensors = ['sensor-1', 'sensor-2', 'sensor-3', 'sensor-4', 'sensor-5'];
   chartData: any[] = [];
   subscription!: Subscription;
-
   view: [number, number] = [700, 300];
 
   showXAxis = true;
@@ -23,8 +23,8 @@ export class SensorChartComponent implements OnInit {
   showLegend = false;
   showXAxisLabel = true;
   showYAxisLabel = true;
-  xAxisLabel = 'Час';
-  yAxisLabel = 'Значення';
+  xAxisLabel = 'Time';
+  yAxisLabel = 'Value';
 
   constructor(private sensorService: SensorService) {}
 
@@ -34,6 +34,11 @@ export class SensorChartComponent implements OnInit {
     this.subscription = interval(5000).subscribe(() => {
       this.loadChart();
     });
+  }
+
+  onSensorChange(event: Event) {
+    this.sensorId = (event.target as HTMLSelectElement).value;
+    this.loadChart();
   }
 
   loadChart(): void {
