@@ -5,6 +5,15 @@
       {{ sensor }}
     </option>
   </select>
+
+  &nbsp;&nbsp;
+
+  <label for="periodSelect">Period: </label>
+  <select id="periodSelect" (change)="onPeriodChange($event)">
+    <option *ngFor="let p of availablePeriods" [value]="p" [selected]="p === period">
+      {{ p }}
+    </option>
+  </select>
 </div>
 
 <ngx-charts-line-chart

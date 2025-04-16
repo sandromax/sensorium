@@ -14,6 +14,10 @@ import { interval, Subscription } from 'rxjs';
 export class SensorChartComponent implements OnInit {
   sensorId = 'sensor-1';
   availableSensors = ['sensor-1', 'sensor-2', 'sensor-3', 'sensor-4', 'sensor-5'];
+
+  period = '6h'; // 🆕 дефолтне значення
+  availablePeriods = ['1h', '6h', '24h'];
+
   chartData: any[] = [];
   subscription!: Subscription;
   view: [number, number] = [700, 300];
@@ -41,8 +45,13 @@ export class SensorChartComponent implements OnInit {
     this.loadChart();
   }
 
+  onPeriodChange(event: Event) {
+    this.period = (event.target as HTMLSelectElement).value;
+    this.loadChart();
+  }
+
   loadChart(): void {
-    this.sensorService.getHistory(this.sensorId, '6h').subscribe(data => {
+    this.sensorService.getHistory(this.sensorId, this.period).subscribe(data => {
       this.chartData = [
         {
           name: this.sensorId,
